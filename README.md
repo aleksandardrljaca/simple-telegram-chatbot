@@ -19,12 +19,15 @@ This bot can answer questions, search the internet, and keep conversation memory
 ### 1. Create a Telegram Bot
 1. Open Telegram and search for **BotFather**
 2. Start a chat and send the command:
+```bash
 /newbot
+```
 4. Choose a name and a username for your bot  
 (e.g. `MyChatHelperBot`)
 5. BotFather will give you a **Bot Token**, something like:
+```bash
    1234567890:ABC-1234defghIJKlmnoPQRstuVWxyz
-
+```
 
 
 ⚠️ Save this token — you’ll need it in the next step.
@@ -33,7 +36,7 @@ This bot can answer questions, search the internet, and keep conversation memory
 
 ### 2. Clone This Repository
 ```bash
-git clone https://github.com/aleksandardrljaca/simple-telegram-chat-bot.git
+git clone https://github.com/aleksandardrljaca/simple-telegram-chatbot.git
 cd telegram-chatbot
 ```
 ### 3. Install dependencies
