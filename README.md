@@ -1,6 +1,6 @@
 # Telegram Chatbot 🤖
 
-A simple chatbot integrated with [Telegram](https://core.telegram.org/bots) using [OrigamiBot](https://pypi.org/project/origamibot/).  
+A simple chatbot integrated with [Telegram](https://core.telegram.org/bots) using [OrigamiBot](https://github.com/cmd410/OrigamiBot).  
 This bot can answer questions, search the internet, and keep conversation memory.
 
 ---
