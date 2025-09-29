@@ -20,7 +20,7 @@ class SimpleChatBot:
         - If a question is inappropriate (dirty, offensive, violent, or unsafe), politely refuse to answer.  
         - Stay professional, friendly, and respectful at all times.
         """
-
+        """
         # Define the function that calls the model
         def call_model(state: MessagesState):
             system_prompt = system_prompt_msg
@@ -31,13 +31,13 @@ class SimpleChatBot:
         # Define the node and edge
         workflow.add_node("model", call_model)
         workflow.add_edge(START, "model")
-
+        """
         # Add simple in-memory checkpointer
         memory = MemorySaver()
         self.chatbot = create_react_agent(model, tools, checkpointer=memory)
 
     def ask(self, msg: str) -> str:
         return self.chatbot.invoke(
-            {"messages": [HumanMessage(content=msg)]},
+            {"messages": [SystemMessage(content=system_prompt_msg),HumanMessage(content=msg)]},
             config={"configurable": {"thread_id": "1"}},
         )["messages"][-1].content
