@@ -12,7 +12,7 @@ class SimpleChatBot:
         workflow = StateGraph(state_schema=MessagesState)
         search = DuckDuckGoSearchRun()
         tools = [search]
-        system_prompt_msg = """
+        self.system_prompt_msg = """
         You are a helpful Telegram bot.  
         - Answer user questions clearly and concisely.  
         - Keep responses short, simple, and to the point.  
@@ -38,6 +38,6 @@ class SimpleChatBot:
 
     def ask(self, msg: str) -> str:
         return self.chatbot.invoke(
-            {"messages": [SystemMessage(content=system_prompt_msg),HumanMessage(content=msg)]},
+            {"messages": [SystemMessage(content=self.system_prompt_msg),HumanMessage(content=msg)]},
             config={"configurable": {"thread_id": "1"}},
         )["messages"][-1].content
